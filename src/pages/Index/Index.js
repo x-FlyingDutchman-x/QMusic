@@ -12,9 +12,10 @@ class Index extends Component {
 
   render() {
     return (
-        <LocaleProvider locale={zh_CN}>
-          <RouteCfg/>
-        </LocaleProvider>
+      <div>hello</div>
+        // <LocaleProvider locale={zh_CN}>
+        //   <RouteCfg/>
+        // </LocaleProvider>
     )
   }
 

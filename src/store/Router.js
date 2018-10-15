@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Redirect, Switch } from 'react-router-dom'
-import Loadable from 'react-loadable'
 
-import { Spin } from 'antd'
+import Home from '../pages/Home/Home'
 
 class Router extends Component {
   constructor(props) {
@@ -15,7 +14,7 @@ class Router extends Component {
     if (isLoading) {
         return (
           <div style={{marginTop:'250px',textAlign:'center',}}>
-            <Spin />
+              Loding...
           </div>
         )
     } else if (error) {
@@ -28,11 +27,6 @@ class Router extends Component {
   }
 
   render() {
-    let Home = Loadable({
-      loader: () => import( '../pages/Home/Home'),
-      loading: this.loadingComponent
-    });
-
     return (
       <Switch>
         <Route exact path="/home" component={Home}/>

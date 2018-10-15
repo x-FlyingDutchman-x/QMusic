@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
-import Lockr from 'lockr'
 
 import History from './store/History'
 import Store from './store/Store'
