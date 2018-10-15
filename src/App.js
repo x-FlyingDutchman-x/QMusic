@@ -1,28 +1,34 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { Provider } from 'react-redux'
+import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import Lockr from 'lockr'
+
+import History from './store/History'
+import Store from './store/Store'
+
+import Index from './pages/Index/Index'
+
+const storeSetting = Store()
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {}
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+      <Provider store={storeSetting}>
+        <Router BrowserHistory={History} basename="/">
+          <Switch>
+            <Route exact path="/home" component={Index} />
+            <Redirect to="/home" />
+          </Switch>
+        </Router>
+      </Provider>
+    )
   }
 }
 
-export default App;
+export default App
