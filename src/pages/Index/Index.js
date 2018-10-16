@@ -4,6 +4,8 @@ import {connect} from 'react-redux'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
+import Paper from '@material-ui/core/Paper'
+import Grid from '@material-ui/core/Grid'
 
 // import './Index.less'
 
@@ -24,13 +26,23 @@ class Index extends Component {
 
   render() {
     return (
-      <AppBar position="position" color="default">
-        <Toolbar>
-          <Typography variant="h6" color="inherit" style={{paddingTop:'10px'}}>
-            Q Music
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      <div>
+        <AppBar position="position" color="default">
+          <Toolbar>
+            <Typography variant="h6" color="inherit" style={{paddingTop:'10px'}}>
+              Q Music
+            </Typography>
+          </Toolbar>
+        </AppBar>
+        <Grid container spacing={8} style={{height:'100%'}}>
+          <Grid item xs={6}>
+            <Paper style={{height:'100%'}}>xs=12</Paper>
+          </Grid>
+          <Grid item xs={6}>
+            <Paper style={{height:'100px'}}>xs=12</Paper>
+          </Grid>
+        </Grid>
+      </div>
     )
   }
 }

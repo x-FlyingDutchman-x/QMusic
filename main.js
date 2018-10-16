@@ -13,6 +13,7 @@ function createWindow () {
     width: 680,
     height: 420,
     resizable: false,
+    maximizable: false,
     titleBarStyle: 'hidden',
     webPreferences: {webSecurity: false},
   })
