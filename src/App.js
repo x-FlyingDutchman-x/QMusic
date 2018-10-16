@@ -6,6 +6,19 @@ import History from './store/History'
 import Store from './store/Store'
 import RouteCfg from './store/Router'
 
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles'
+import blueGrey from '@material-ui/core/colors/blueGrey'
+import pink from '@material-ui/core/colors/pink'
+
+const accent = pink[400];
+
+const theme = createMuiTheme({
+  palette: {
+    type: 'dark',
+    primary: blueGrey,
+  },
+});
+
 const storeSetting = Store()
 
 class App extends Component {
@@ -17,13 +30,15 @@ class App extends Component {
 
   render() {
     return (
-      <Provider store={storeSetting}>
-        <Router BrowserHistory={History} basename="/">
-          <Switch>
-            <RouteCfg/>
-          </Switch>
-        </Router>
-      </Provider>
+      <MuiThemeProvider theme={theme}>
+        <Provider store={storeSetting}>
+          <Router BrowserHistory={History} basename="/">
+            <Switch>
+              <RouteCfg/>
+            </Switch>
+          </Router>
+        </Provider>
+      </MuiThemeProvider>
     )
   }
 }

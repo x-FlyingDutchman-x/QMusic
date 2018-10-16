@@ -1,6 +1,10 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
+
 // import './Index.less'
 
 import MusicqqAction from '../../actions/musicqq'
@@ -20,7 +24,13 @@ class Index extends Component {
 
   render() {
     return (
-      <div>hello</div>
+      <AppBar position="position" color="default">
+        <Toolbar>
+          <Typography variant="h6" color="inherit" style={{paddingTop:'10px'}}>
+            Q Music
+          </Typography>
+        </Toolbar>
+      </AppBar>
     )
   }
 }

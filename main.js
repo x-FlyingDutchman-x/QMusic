@@ -9,7 +9,13 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 680, height: 420, resizable: false, webPreferences: {webSecurity: false},})
+  mainWindow = new BrowserWindow({
+    width: 680,
+    height: 420,
+    resizable: false,
+    titleBarStyle: 'hidden',
+    webPreferences: {webSecurity: false},
+  })
 
   // and load the index.html of the app.
   mainWindow.loadURL('http://localhost:3000/');
