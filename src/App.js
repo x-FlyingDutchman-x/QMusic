@@ -1,23 +1,27 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
-import { HashRouter as Router, Switch } from 'react-router-dom'
+import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 
 import History from './store/History'
 import Store from './store/Store'
-import RouteCfg from './store/Router'
+
+import Index from './pages/Index/Index'
 
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles'
 import blueGrey from '@material-ui/core/colors/blueGrey'
 import pink from '@material-ui/core/colors/pink'
 
-const accent = pink[400];
 
 const theme = createMuiTheme({
   palette: {
     type: 'dark',
     primary: blueGrey,
+    secondary: pink,
   },
-});
+  typography: {
+    useNextVariants: true,
+  },
+})
 
 const storeSetting = Store()
 
@@ -34,7 +38,8 @@ class App extends Component {
         <Provider store={storeSetting}>
           <Router BrowserHistory={History} basename="/">
             <Switch>
-              <RouteCfg/>
+              <Route path="/" component={Index} />
+              <Redirect to="/" />
             </Switch>
           </Router>
         </Provider>

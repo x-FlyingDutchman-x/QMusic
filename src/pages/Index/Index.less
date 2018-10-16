@@ -1,27 +1,36 @@
 .indexpage {
     .appBar {
-        z-index: 200;
-        height:60px;
+        height:40px;
+        width: 700px;
+        margin-left: 200px;
+        .line {
+          min-height:40px;
+        }
         .appItem {
-            padding-top:10px;
+            padding-top:0px;
         }
     }
     .drawer {
         position: relative;
-        z-index: 1;
-        padding-top: 60px;
+        div {
+          background-color: #424242;
+        }
         .first {
-            margin-top:60px;
-            width:150px;
+            margin-top:20px;
+            width:200px;
         }
         .drawerItem {
             padding: 0;
+            height: 40px;
             -webkit-app-region: no-drag;
+            .drawerItemBtn {
+              height: 40px;
+            }
         }
     }
     .content {
         margin-top: 10px;
-        margin-left: 160px;
-        width: 510px;
+        margin-left: 210px;
+        width: 680px;
     }
 }

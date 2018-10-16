@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Redirect, Switch } from 'react-router-dom'
 
-import Index from '../pages/Index/Index'
+import Home from '../pages/Home/Home'
 
 class Router extends Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class Router extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/home" component={Index}/>
+        <Route path="/home" component={Home}/>
         <Redirect to='/home'/>
       </Switch>
     )
