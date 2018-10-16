@@ -5,9 +5,14 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import Paper from '@material-ui/core/Paper'
+import Drawer from '@material-ui/core/Drawer'
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemText from '@material-ui/core/ListItemText'
+import Divider from '@material-ui/core/Divider'
 import Grid from '@material-ui/core/Grid'
 
-// import './Index.less'
+import './Index.less'
 
 import MusicqqAction from '../../actions/musicqq'
 
@@ -26,15 +31,32 @@ class Index extends Component {
 
   render() {
     return (
-      <div>
-        <AppBar position="position" color="default">
+      <div className="indexpage">
+        <AppBar color="default"  className="appBar">
           <Toolbar>
-            <Typography variant="h6" color="inherit" style={{paddingTop:'10px'}}>
-              Q Music
+            <Typography variant="h6" color="inherit" className="appItem">
+              Test App
             </Typography>
           </Toolbar>
         </AppBar>
-        <Grid container spacing={8} style={{height:'100%'}}>
+        <Drawer
+          variant="permanent"
+          className="drawer"
+        >
+          <Divider className="first" />
+          <List className="drawerItem">
+            <ListItem button>
+              <ListItemText primary="List.1" />
+            </ListItem>
+          </List>
+          <Divider />
+          <List className="drawerItem">
+            <ListItem button>
+              <ListItemText primary="List.2" />
+            </ListItem>
+          </List>
+        </Drawer>
+        <Grid container spacing={8} className="content">
           <Grid item xs={6}>
             <Paper style={{height:'100%'}}>xs=12</Paper>
           </Grid>
@@ -46,6 +68,7 @@ class Index extends Component {
     )
   }
 }
+
 
 export default connect(
   (state) => ({
