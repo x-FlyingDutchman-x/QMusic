@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Redirect, Switch } from 'react-router-dom'
 
-import Home from '../pages/Home/Home'
+import Index from '../pages/Index/Index'
 
 class Router extends Component {
   constructor(props) {
@@ -10,26 +10,10 @@ class Router extends Component {
     this.state = {}
   }
 
-  loadingComponent({ isLoading, error }) {
-    if (isLoading) {
-        return (
-          <div style={{marginTop:'250px',textAlign:'center',}}>
-              Loding...
-          </div>
-        )
-    } else if (error) {
-        return (
-          <div>Sorry, there was a problem loading the page.</div>
-        )
-    } else {
-        return null;
-    }
-  }
-
   render() {
     return (
       <Switch>
-        <Route exact path="/home" component={Home}/>
+        <Route exact path="/home" component={Index}/>
         <Redirect to='/home'/>
       </Switch>
     )

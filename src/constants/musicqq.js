@@ -1,0 +1,8 @@
+const MusicqqTypes = {
+  MUSICQQ_LOADING:  'MUSICQQ_LOADING',
+  MUSICQQ_GET:      'MUSICQQ_GET',
+  MUSICQQ_ERR:      'MUSICQQ_ERR',
+  MUSICQQ_CLEANERR: 'MUSICQQ_CLEANERR',
+}
+
+export default MusicqqTypes

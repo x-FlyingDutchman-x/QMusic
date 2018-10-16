@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
 
-// import HomeReducer from './home'
+import MusciqqReducer from './musicqq'
 
-// let Home = new HomeReducer()
+let Musicqq = new MusciqqReducer()
 
 export default combineReducers({
-  // homeState: Home.handler,
+  musicqqState: Musicqq.handler,
 })

@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
-
-import RouteCfg from '../../store/Router'
+import {connect} from 'react-redux'
 
 // import './Index.less'
 
@@ -13,15 +12,14 @@ class Index extends Component {
   render() {
     return (
       <div>hello</div>
-        // <LocaleProvider locale={zh_CN}>
-        //   <RouteCfg/>
-        // </LocaleProvider>
     )
-  }
-
-  collapseSider() {
-    this.refs.sider.toggle()
   }
 }
 
-export default Index
+export default connect(
+  (state) => ({
+    musicqqState: state.musicqqState,
+  }),
+  (dispatch) => ({
+  })
+)(Index)

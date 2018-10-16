@@ -4,6 +4,7 @@ import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 
 import History from './store/History'
 import Store from './store/Store'
+import RouteCfg from './store/Router'
 
 import Index from './pages/Index/Index'
 
@@ -21,8 +22,7 @@ class App extends Component {
       <Provider store={storeSetting}>
         <Router BrowserHistory={History} basename="/">
           <Switch>
-            <Route exact path="/home" component={Index} />
-            <Redirect to="/home" />
+            <RouteCfg/>
           </Switch>
         </Router>
       </Provider>
